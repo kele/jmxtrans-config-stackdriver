@@ -8,7 +8,7 @@ import sys
 
 import differ
 
-def generate(template, **options):
+def generate(template, options):
     """Transform 'template' into a data structure suitable for consumption by
     jmxtrans.
 
