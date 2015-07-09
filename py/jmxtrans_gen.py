@@ -8,7 +8,7 @@ import sys
 
 import differ
 
-def transform(template, url, source, detectInstance):
+def generate(template, **options):
     """Transform 'template' into a data structure suitable for consumption by
     jmxtrans.
 
@@ -123,6 +123,9 @@ def transform(template, url, source, detectInstance):
         "typeNames"?: [String, ...]
     }
 """
+    url = options["url"]
+    source = options["source"]
+    detectInstance = options["detectInstance"]
 
     assert len(template) == 2, (
         "Dictionary has {0} keys, expected 2.".format(len(template)))
@@ -182,113 +185,5 @@ def transform(template, url, source, detectInstance):
     # Finally, build the result.
     result = OrderedDict()
     result["servers"] = servers
-    return result
+    return json.dumps(result, indent=2, separators=(',', ': '))
 
-
-def write_config_file(template, output_file, url, source, detectInstance):
-    """Write the configuration file.
-
-    1. Use the 'transform' method to transform 'template' into the output
-       format.
-    2. Load the previously-existing data (if any) from 'output_file'.
-    3. Write the new data (the result of 'transform') to 'output_file'.
-    4. Print a human-readable summary of the differences between #2 and #3.
-"""
-
-    transformed = transform(template, url, source, detectInstance)
-
-    # If a file exists at 'output_file', read it in so we can show the
-    # differences (as a sanity check).
-    original = OrderedDict()
-    if (os.path.isfile(output_file)):
-        with open(output_file) as orig:
-            original = json.load(orig, object_pairs_hook=OrderedDict)
-
-    # Write the file!
-    with open(output_file, 'w') as out:
-        json.dump(transformed, out, indent=2, separators=(',', ': '))
-
-    # Explain the differences (as a sanity check).
-    differences = differ.diff(original, transformed)
-    if (len(differences)):
-        print "Differences for {0}:\n{1}\n".format(output_file, differences)
-
-
-def write_readme_file(output_dir):
-    """Write a simple README file to the output directory.
-
-    This reminds future maintainers that the output files are automatically
-    generated and should not be generated directly.
-"""
-    with open(output_dir + 'README', 'w') as out:
-        out.write('The files in this directory are automatically generated' +
-                  ' and will be overwritten.\n')
-        out.write('If you want to change them, please see\n')
-        out.write('../../templates/generate-json-files-from-templates.py\n')
-        out.write('and edit the .json.tmpl files in that directory.\n')
-
-
-def main(fileNames):
-    """For each FOO.json.tmpl in fileNames, write four FOO.json files in the
-    appropriate output directories. Also write (the same) README file in
-    each output directory.
-
-    The four files can perhaps best be understood as the following matrix:
-
-                       detect                        specify
-        +--------------------------------+-------------------------------+
-        | gw = "https://jmx-gateway.stackdriver.com/v1/custom"           |
-Stack-  | dir = "../stackdriver/" + subdir                               |
-driver  |                                                                |
-        | subdir = json-detect-instance | subdir = json-specify-instance |
-        | detectInstance = AWS          | source = AWS_INSTANCE_ID       |
-        +----------------------------------------------------------------+
-        | gw = https://jmx-gateway.google.stackdriver.com/v1/custom      |
-Google  | dir = "../google-cloud-monitoring/" + subdir                   |
-        |                                                                |
-        | subdir = json-detect-instance | subdir = json-specify-instance |
-        | detectInstance: GCE           | source: GCE_INSTANCE_ID        |
-        +--------------------------------+-------------------------------+
-"""
-
-    # Stackdriver gateway and Google gateway.
-    sd_gw = u'https://jmx-gateway.stackdriver.com/v1/custom'
-    gg_gw = u'https://jmx-gateway.google.stackdriver.com/v1/custom'
-
-    # The four output directories
-    sd_jdi = '../stackdriver/json-detect-instance/'
-    sd_jsi = '../stackdriver/json-specify-instance/'
-    gg_jdi = '../google-cloud-monitoring/json-detect-instance/'
-    gg_jsi = '../google-cloud-monitoring/json-specify-instance/'
-
-    for infile in fileNames:
-        assert infile.endswith('.json.tmpl')
-        outfile = infile[:-5]  # strip off '.tmpl'
-
-        with open(infile) as input:
-            template = json.load(input, object_pairs_hook=OrderedDict)
-
-        # Two Stackdriver files.
-        write_config_file(template, sd_jdi + outfile,
-                          sd_gw, None, u'AWS')
-        write_config_file(template, sd_jsi + outfile,
-                          sd_gw, u'AWS_INSTANCE_ID', None)
-        # Two Google files.
-        write_config_file(template, gg_jdi + outfile,
-                          gg_gw, None, u'GCE')
-        write_config_file(template, gg_jsi + outfile,
-                          gg_gw, u'GCE_INSTANCE_ID', None)
-
-    # Two Stackdriver READMEs.
-    write_readme_file(sd_jdi)
-    write_readme_file(sd_jsi)
-    # Two Google READMEs.
-    write_readme_file(gg_jdi)
-    write_readme_file(gg_jsi)
-
-
-# Usage:
-#   cd jmxtrans/templates
-#   ./generate-json-files-from-templates.py *.tmpl
-if __name__ == "__main__":
-    main(sys.argv[1:])
