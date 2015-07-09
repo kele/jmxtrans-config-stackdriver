@@ -96,8 +96,11 @@ Google  | dir = "jmxtrans/google-cloud-monitoring/" + subdir                   |
                                                       'detectInstance' : None}))
 
         # GenericJMX file
+        config = genericjmx.generate(template, options)
         write_config_file(filename=generic_jmx_dir + outfile + '.conf',
-                          content = genericjmx.generate(template, options))
+                          content = config["conf"])
+        write_config_file(filename=generic_jmx_dir + outfile + '_types.db',
+                          content = config["types"])
 
     # Two Stackdriver READMEs.
     write_readme_file(sd_jdi)
