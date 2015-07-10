@@ -1,0 +1,2 @@
+sdhbase_Thrift_ThriftOne	callQueueLen:GAUGE:0:U, SlowThriftCall_mean:GAUGE:0:U, TimeInQueue_mean:GAUGE:0:U, ThriftCall_mean:GAUGE:0:U, BatchGet_mean:GAUGE:0:U, BatchMutate_mean:GAUGE:0:U
+sdhbase_Thrift_ThriftTwo	callQueueLen:GAUGE:0:U, SlowThriftCall_mean:GAUGE:0:U, TimeInQueue_mean:GAUGE:0:U, ThriftCall_mean:GAUGE:0:U, BatchGet_mean:GAUGE:0:U, BatchMutate_mean:GAUGE:0:U

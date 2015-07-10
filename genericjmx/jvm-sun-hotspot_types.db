@@ -1,0 +1,5 @@
+jvm_localhost_Threading	DaemonThreadCount:GAUGE:0:U, ThreadCount:GAUGE:0:U, PeakThreadCount:GAUGE:0:U
+jvm_localhost_Memory	HeapMemoryUsage:GAUGE:0:U, NonHeapMemoryUsage:GAUGE:0:U
+jvm_localhost_Runtime	Uptime:GAUGE:0:U
+jvm_localhost_os	CommittedVirtualMemorySize:GAUGE:0:U, FreePhysicalMemorySize:GAUGE:0:U, FreeSwapSpaceSize:GAUGE:0:U, OpenFileDescriptorCount:GAUGE:0:U, ProcessCpuTime:GAUGE:0:U, SystemLoadAverage:GAUGE:0:U
+jvm_localhost_gc	CollectionCount:GAUGE:0:U, CollectionTime:GAUGE:0:U

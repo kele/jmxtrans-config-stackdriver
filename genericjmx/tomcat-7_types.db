@@ -1,0 +1,4 @@
+tomcat_connectors	currentThreadCount:GAUGE:0:U, currentThreadsBusy:GAUGE:0:U, :GAUGE:0:U
+tomcat_manager	activeSessions:GAUGE:0:U
+tomcat_requestProcessor	bytesReceived:GAUGE:0:U, bytesSent:GAUGE:0:U, errorCount:GAUGE:0:U, processingTime:GAUGE:0:U, requestCount:GAUGE:0:U
+tomcat_data-source	numActive:GAUGE:0:U, numIdle:GAUGE:0:U

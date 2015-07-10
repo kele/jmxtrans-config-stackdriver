@@ -1,0 +1,3 @@
+sdhbase_Master_Server	averageLoad:GAUGE:0:U, numRegionServers:GAUGE:0:U, numDeadRegionServers:GAUGE:0:U
+sdhbase_IPC_IPC	sentBytes:GAUGE:0:U, receivedBytes:GAUGE:0:U, queueSize:GAUGE:0:U, numOpenConnections:GAUGE:0:U
+sdhbase_RegionServer_RegionServerStatistics	blockCacheCount:GAUGE:0:U, blockCacheEvictionCount:GAUGE:0:U, blockCacheFreeSize:GAUGE:0:U, blockCacheHitCount:GAUGE:0:U, blockCountHitPercent:GAUGE:0:U, blockCacheMissCount:GAUGE:0:U, blockCacheSize:GAUGE:0:U, compactionQueueLength:GAUGE:0:U, flushQueueLength:GAUGE:0:U, memStoreSize:GAUGE:0:U, storeCount:GAUGE:0:U, readRequestCount:GAUGE:0:U, storeFileIndexSize:GAUGE:0:U, writeRequestCount:GAUGE:0:U, totalRequestCount:GAUGE:0:U, slowAppendCount:GAUGE:0:U, slowPutCount:GAUGE:0:U, slowGetCount:GAUGE:0:U

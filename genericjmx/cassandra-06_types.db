@@ -1,0 +1,18 @@
+cassandra_storageservice	Load:GAUGE:0:U, ExceptionCount:GAUGE:0:U
+cassandra_commitlog	CompletedTasks:GAUGE:0:U, PendingTasks:GAUGE:0:U, TotalCommitlogSize:GAUGE:0:U
+cassandra_compactionmanager	PendingTasks:GAUGE:0:U, CompletedTasks:GAUGE:0:U
+cassandra_stage_MutationStage	ActiveCount:GAUGE:0:U, CompletedTasks:GAUGE:0:U, CurrentlyBlockedTasks:GAUGE:0:U, PendingTasks:GAUGE:0:U
+cassandra_stage_ReadRepairStage	ActiveCount:GAUGE:0:U, CompletedTasks:GAUGE:0:U, CurrentlyBlockedTasks:GAUGE:0:U, PendingTasks:GAUGE:0:U
+cassandra_stage_ReadStage	ActiveCount:GAUGE:0:U, CompletedTasks:GAUGE:0:U, CurrentlyBlockedTasks:GAUGE:0:U, PendingTasks:GAUGE:0:U
+cassandra_stage_ReplicateOnWriteStage	ActiveCount:GAUGE:0:U, CompletedTasks:GAUGE:0:U, CurrentlyBlockedTasks:GAUGE:0:U, PendingTasks:GAUGE:0:U
+cassandra_stage_RequestResponseStage	ActiveCount:GAUGE:0:U, CompletedTasks:GAUGE:0:U, CurrentlyBlockedTasks:GAUGE:0:U, PendingTasks:GAUGE:0:U
+cassandra_internal_AntiEntropySessions	ActiveCount:GAUGE:0:U, CompletedTasks:GAUGE:0:U, CurrentlyBlockedTasks:GAUGE:0:U, PendingTasks:GAUGE:0:U
+cassandra_internal_AntiEntropyStage	ActiveCount:GAUGE:0:U, CompletedTasks:GAUGE:0:U, CurrentlyBlockedTasks:GAUGE:0:U, PendingTasks:GAUGE:0:U
+cassandra_internal_FlushWriter	ActiveCount:GAUGE:0:U, CompletedTasks:GAUGE:0:U, CurrentlyBlockedTasks:GAUGE:0:U, PendingTasks:GAUGE:0:U
+cassandra_internal_GossipStage	ActiveCount:GAUGE:0:U, CompletedTasks:GAUGE:0:U, CurrentlyBlockedTasks:GAUGE:0:U, PendingTasks:GAUGE:0:U
+cassandra_internal_HintedHandoff	ActiveCount:GAUGE:0:U, CompletedTasks:GAUGE:0:U, CurrentlyBlockedTasks:GAUGE:0:U, PendingTasks:GAUGE:0:U
+cassandra_internal_InternalResponseStage	ActiveCount:GAUGE:0:U, CompletedTasks:GAUGE:0:U, CurrentlyBlockedTasks:GAUGE:0:U, PendingTasks:GAUGE:0:U
+cassandra_internal_MemtablePostFlusher	ActiveCount:GAUGE:0:U, CompletedTasks:GAUGE:0:U, CurrentlyBlockedTasks:GAUGE:0:U, PendingTasks:GAUGE:0:U
+cassandra_internal_MigrationStage	ActiveCount:GAUGE:0:U, CompletedTasks:GAUGE:0:U, CurrentlyBlockedTasks:GAUGE:0:U, PendingTasks:GAUGE:0:U
+cassandra_internal_MiscStage	ActiveCount:GAUGE:0:U, CompletedTasks:GAUGE:0:U, CurrentlyBlockedTasks:GAUGE:0:U, PendingTasks:GAUGE:0:U
+cassandra_internal_StreamStage	ActiveCount:GAUGE:0:U, CompletedTasks:GAUGE:0:U, CurrentlyBlockedTasks:GAUGE:0:U, PendingTasks:GAUGE:0:U

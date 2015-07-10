@@ -1,0 +1,3 @@
+jboss_threads	currentThreadCount:GAUGE:0:U, currentThreadsBusy:GAUGE:0:U
+jboss_requests	bytesReceived:GAUGE:0:U, bytesSent:GAUGE:0:U, errorCount:GAUGE:0:U, maxTime:GAUGE:0:U, processingTime:GAUGE:0:U, requestCount:GAUGE:0:U
+jboss_datasources	ConnectionCount:GAUGE:0:U, ConnectionCreatedCount:GAUGE:0:U, InUseConnectionCount:GAUGE:0:U, MaxConnectionsInUseCount:GAUGE:0:U, AvailableConnectionCount:GAUGE:0:U
