@@ -171,7 +171,7 @@ def generate(template, options):
         # contains (obj, attr, resultAlias, and outputWriters)
         query = OrderedDict()
         query["obj"] = obj
-        query["attr"] = attr
+        query["attr"] = [a["name"] for a in attr]
         query["resultAlias"] = resultAlias
         query["outputWriters"] = outputWriters
         queries.append(query)
