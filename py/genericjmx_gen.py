@@ -48,7 +48,7 @@ def convert_query(q):
 
     return {"ObjectName" : obj,
             "MBean" : alias,
-            "Values" : [ a["name"] for a in q["attr"]],
+            "Attributes" : q["attr"],
             "InstancePrefix" : alias}
 
 
@@ -56,15 +56,15 @@ def encode_value(attribute):
     return VALUE_TEMPLATE.format(Attribute=attribute)
 
 def encode_type(name, attributes):
-    attr_with_types = [ attr + ":GAUGE:0:U" for attr in attributes ]
+    attr_with_types = [ attr["name"] + ":" + attr["type"] for attr in attributes ]
     return name + "\t" + ', '.join(attr_with_types)
 
 def encode_query(genericjmx_query):
-    values_string = ''.join([encode_value(v) for v in genericjmx_query["Values"]])
+    values_string = ''.join([encode_value(v["name"]) for v in genericjmx_query["Attributes"]])
     value_type = genericjmx_query["InstancePrefix"]
 
     return { "conf" : MBEAN_TEMPLATE.format(ValuesString=values_string, **genericjmx_query),
-             "type" : encode_type(value_type, genericjmx_query["Values"]) }
+             "type" : encode_type(value_type, genericjmx_query["Attributes"]) }
 
 
 def convert(server, queries, options):
