@@ -9,36 +9,36 @@
       "obj": "org.apache.activemq:type=Broker,brokerName=localhost",
       "resultAlias": "sdamq.broker",
       "attr": [
-        "AverageMessageSize",
-        "CurrentConnectionsCount",
-        "JobSchedulerStoreLimit",
-        "JobSchedulerStorePercentUsage",
-        "MaxMessageSize",
-        "MemoryLimit",
-        "MemoryPercentUsage",
-        "MinMessageSize",
-        "StoreLimit",
-        "StorePercentUsage",
-        "TempLimit",
-        "TempPercentUsage",
-        "TotalConnectionsCount",
-        "TotalConsumerCount",
-        "TotalDequeueCount",
-        "TotalEnqueueCount",
-        "TotalMessageCount",
-        "TotalProducerCount"
+        { "name" : "AverageMessageSize", "type" : "GAUGE:0:U" },
+        { "name" : "CurrentConnectionsCount", "type" : "GAUGE:0:U" },
+        { "name" : "JobSchedulerStoreLimit", "type" : "GAUGE:0:U" },
+        { "name" : "JobSchedulerStorePercentUsage", "type" : "GAUGE:0:U" },
+        { "name" : "MaxMessageSize", "type" : "GAUGE:0:U" },
+        { "name" : "MemoryLimit", "type" : "GAUGE:0:U" },
+        { "name" : "MemoryPercentUsage", "type" : "GAUGE:0:U" },
+        { "name" : "MinMessageSize", "type" : "GAUGE:0:U" },
+        { "name" : "StoreLimit", "type" : "GAUGE:0:U" },
+        { "name" : "StorePercentUsage", "type" : "GAUGE:0:U" },
+        { "name" : "TempLimit", "type" : "GAUGE:0:U" },
+        { "name" : "TempPercentUsage", "type" : "GAUGE:0:U" },
+        { "name" : "TotalConnectionsCount", "type" : "GAUGE:0:U" },
+        { "name" : "TotalConsumerCount", "type" : "GAUGE:0:U" },
+        { "name" : "TotalDequeueCount", "type" : "GAUGE:0:U" },
+        { "name" : "TotalEnqueueCount", "type" : "GAUGE:0:U" },
+        { "name" : "TotalMessageCount", "type" : "GAUGE:0:U" },
+        { "name" : "TotalProducerCount", "type" : "GAUGE:0:U" }
       ]
     },
     {
       "obj": "org.apache.activemq:type=Broker,brokerName=localhost,destinationType=Topic,destinationName=*",
       "resultAlias": "activemq.topic",
       "attr": [
-        "ConsumerCount",
-        "ProducerCount",
-        "EnqueueCount",
-        "DequeueCount",
-        "InFlightCount",
-        "ExpiredCount"
+        { "name" : "ConsumerCount", "type" : "GAUGE:0:U" },
+        { "name" : "ProducerCount", "type" : "GAUGE:0:U" },
+        { "name" : "EnqueueCount", "type" : "GAUGE:0:U" },
+        { "name" : "DequeueCount", "type" : "GAUGE:0:U" },
+        { "name" : "InFlightCount", "type" : "GAUGE:0:U" },
+        { "name" : "ExpiredCount", "type" : "GAUGE:0:U" }
       ],
       "typeNames": [
         "destinationName"
@@ -48,13 +48,13 @@
       "obj": "org.apache.activemq:type=Broker,brokerName=localhost,destinationType=Queue,destinationName=*",
       "resultAlias": "activemq.queue",
       "attr": [
-        "ConsumerCount",
-        "ProducerCount",
-        "QueueSize",
-        "EnqueueCount",
-        "DequeueCount",
-        "InFlightCount",
-        "ExpiredCount"
+        { "name" : "ConsumerCount", "type" : "GAUGE:0:U" },
+        { "name" : "ProducerCount", "type" : "GAUGE:0:U" },
+        { "name" : "QueueSize", "type" : "GAUGE:0:U" },
+        { "name" : "EnqueueCount", "type" : "GAUGE:0:U" },
+        { "name" : "DequeueCount", "type" : "GAUGE:0:U" },
+        { "name" : "InFlightCount", "type" : "GAUGE:0:U" },
+        { "name" : "ExpiredCount", "type" : "GAUGE:0:U" }
       ],
       "typeNames": [
         "destinationName"

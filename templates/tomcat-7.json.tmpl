@@ -9,35 +9,34 @@
       "obj": "Catalina:type=ThreadPool,name=*",
       "resultAlias": "tomcat.connectors",
       "attr": [
-        "currentThreadCount",
-        "currentThreadsBusy",
-        ""
+        { "name" : "currentThreadCount", "type" : "GAUGE:0:U" },
+        { "name" : "currentThreadsBusy", "type" : "GAUGE:0:U" }
       ]
     },
     {
       "obj": "Catalina:type=Manager,context=*,host=*",
       "resultAlias": "tomcat.manager",
       "attr": [
-        "activeSessions"
+        { "name" : "activeSessions", "type" : "GAUGE:0:U" }
       ]
     },
     {
       "obj": "Catalina:type=GlobalRequestProcessor,name=*",
       "resultAlias": "tomcat.requestProcessor",
       "attr": [
-        "bytesReceived",
-        "bytesSent",
-        "errorCount",
-        "processingTime",
-        "requestCount"
+        { "name" : "bytesReceived", "type" : "GAUGE:0:U" },
+        { "name" : "bytesSent", "type" : "GAUGE:0:U" },
+        { "name" : "errorCount", "type" : "GAUGE:0:U" },
+        { "name" : "processingTime", "type" : "GAUGE:0:U" },
+        { "name" : "requestCount", "type" : "GAUGE:0:U" }
       ]
     },
     {
       "obj": "Catalina:type=DataSource,context=*,host=*,class=javax.sql.DataSource,name=*",
       "resultAlias": "tomcat.data-source",
       "attr": [
-        "numActive",
-        "numIdle"
+        { "name" : "numActive", "type" : "GAUGE:0:U" },
+        { "name" : "numIdle", "type" : "GAUGE:0:U" }
       ]
     }
   ]

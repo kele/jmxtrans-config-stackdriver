@@ -8,24 +8,24 @@
     {
       "obj": "Hadoop:service=HBase,name=Thrift,sub=ThriftOne",
       "attr": [
-        "callQueueLen",
-        "SlowThriftCall_mean",
-        "TimeInQueue_mean",
-        "ThriftCall_mean",
-        "BatchGet_mean",
-        "BatchMutate_mean"
+        { "name" : "callQueueLen", "type" : "GAUGE:0:U" },
+        { "name" : "SlowThriftCall_mean", "type" : "GAUGE:0:U" },
+        { "name" : "TimeInQueue_mean", "type" : "GAUGE:0:U" },
+        { "name" : "ThriftCall_mean", "type" : "GAUGE:0:U" },
+        { "name" : "BatchGet_mean", "type" : "GAUGE:0:U" },
+        { "name" : "BatchMutate_mean", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdhbase.Thrift.ThriftOne"
     },
     {
       "obj": "Hadoop:service=HBase,name=Thrift,sub=ThriftTwo",
       "attr": [
-        "callQueueLen",
-        "SlowThriftCall_mean",
-        "TimeInQueue_mean",
-        "ThriftCall_mean",
-        "BatchGet_mean",
-        "BatchMutate_mean"
+        { "name" : "callQueueLen", "type" : "GAUGE:0:U" },
+        { "name" : "SlowThriftCall_mean", "type" : "GAUGE:0:U" },
+        { "name" : "TimeInQueue_mean", "type" : "GAUGE:0:U" },
+        { "name" : "ThriftCall_mean", "type" : "GAUGE:0:U" },
+        { "name" : "BatchGet_mean", "type" : "GAUGE:0:U" },
+        { "name" : "BatchMutate_mean", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdhbase.Thrift.ThriftTwo"
     }

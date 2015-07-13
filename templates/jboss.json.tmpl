@@ -9,8 +9,8 @@
       "obj": "jboss.web:type=ThreadPool,name=*",
       "resultAlias": "jboss.threads",
       "attr": [
-        "currentThreadCount",
-        "currentThreadsBusy"
+        { "name" : "currentThreadCount", "type" : "GAUGE:0:U" },
+        { "name" : "currentThreadsBusy", "type" : "GAUGE:0:U" }
       ],
       "typeNames": [
         "name"
@@ -20,12 +20,12 @@
       "obj": "jboss.web:type=GlobalRequestProcessor,name=*",
       "resultAlias": "jboss.requests",
       "attr": [
-        "bytesReceived",
-        "bytesSent",
-        "errorCount",
-        "maxTime",
-        "processingTime",
-        "requestCount"
+        { "name" : "bytesReceived", "type" : "GAUGE:0:U" },
+        { "name" : "bytesSent", "type" : "GAUGE:0:U" },
+        { "name" : "errorCount", "type" : "GAUGE:0:U" },
+        { "name" : "maxTime", "type" : "GAUGE:0:U" },
+        { "name" : "processingTime", "type" : "GAUGE:0:U" },
+        { "name" : "requestCount", "type" : "GAUGE:0:U" }
       ],
       "typeNames": [
         "name"
@@ -35,11 +35,11 @@
       "obj": "jboss.jca:service=ManagedConnectionPool,name=*",
       "resultAlias": "jboss.datasources",
       "attr": [
-        "ConnectionCount",
-        "ConnectionCreatedCount",
-        "InUseConnectionCount",
-        "MaxConnectionsInUseCount",
-        "AvailableConnectionCount"
+        { "name" : "ConnectionCount", "type" : "GAUGE:0:U" },
+        { "name" : "ConnectionCreatedCount", "type" : "GAUGE:0:U" },
+        { "name" : "InUseConnectionCount", "type" : "GAUGE:0:U" },
+        { "name" : "MaxConnectionsInUseCount", "type" : "GAUGE:0:U" },
+        { "name" : "AvailableConnectionCount", "type" : "GAUGE:0:U" }
       ],
       "typeNames": [
         "name"

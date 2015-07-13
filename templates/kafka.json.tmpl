@@ -7,224 +7,224 @@
     {
       "obj": "\"kafka.log\":type=\"LogFlushStats\",name=\"LogFlushRateAndTimeMs\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.log.LogFlushStats.LogFlush"
     },
     {
       "obj": "\"kafka.server\":type=\"BrokerTopicMetrics\",name=\"AllTopicsBytesInPerSec\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.server.BrokerTopicMetrics.AllTopicsBytesIn"
     },
     {
       "obj": "\"kafka.server\":type=\"BrokerTopicMetrics\",name=\"AllTopicsFailedFetchRequestsPerSec\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.server.BrokerTopicMetrics.AllTopicsFailedFetchRequests"
     },
     {
       "obj": "\"kafka.server\":type=\"BrokerTopicMetrics\",name=\"AllTopicsFailedProduceRequestsPerSec\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.server.BrokerTopicMetrics.AllTopicsFailedProduceRequests"
     },
     {
       "obj": "\"kafka.server\":type=\"BrokerTopicMetrics\",name=\"AllTopicsMessagesInPerSec\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.server.BrokerTopicMetrics.AllTopicsMessagesIn"
     },
     {
       "obj": "\"kafka.server\":type=\"BrokerTopicMetrics\",name=\"AllTopicsBytesOutPerSec\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.server.BrokerTopicMetrics.AllTopicsBytesOut"
     },
     {
       "obj": "\"kafka.server\":type=\"ReplicaManager\",name=\"UnderReplicatedPartitions\"",
       "attr": [
-        "Value"
+        { "name" : "Value", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.server.ReplicaManager.UnderReplicatedPartitions"
     },
     {
       "obj": "\"kafka.server\":type=\"ReplicaManager\",name=\"PartitionCount\"",
       "attr": [
-        "Value"
+        { "name" : "Value", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.server.ReplicaManager.PartitionCount"
     },
     {
       "obj": "\"kafka.server\":type=\"ReplicaManager\",name=\"LeaderCount\"",
       "attr": [
-        "Value"
+        { "name" : "Value", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.server.ReplicaManager.LeaderCount"
     },
     {
       "obj": "\"kafka.server\":type=\"ReplicaManager\",name=\"ISRShrinksPerSec\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.server.ReplicaManager.ISRShrinks"
     },
     {
       "obj": "\"kafka.server\":type=\"ReplicaManager\",name=\"IsrExpandsPerSec\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.server.ReplicaManager.ISRExpands"
     },
     {
       "obj": "\"kafka.server\":type=\"ReplicaFetcherManager\",name=\"Replica-MaxLag\"",
       "attr": [
-        "Value"
+        { "name" : "Value", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.server.ReplicaFetcherManager.MaxLag"
     },
     {
       "obj": "\"kafka.server\":type=\"ReplicaFetcherManager\",name=\"Replica-MinFetchRate\"",
       "attr": [
-        "Value"
+        { "name" : "Value", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.server.ReplicaFetcherManager.MinFetchRate"
     },
     {
       "obj": "\"kafka.server\":type=\"ProducerRequestPurgatory\",name=\"NumDelayedRequests\"",
       "attr": [
-        "Value"
+        { "name" : "Value", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.server.ProducerRequestPurgatory.NumDelayedRequests"
     },
     {
       "obj": "\"kafka.server\":type=\"ProducerRequestPurgatory\",name=\"PurgatorySize\"",
       "attr": [
-        "Value"
+        { "name" : "Value", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.server.ProducerRequestPurgatory.PurgatorySize"
     },
     {
       "obj": "\"kafka.server\":type=\"FetchRequestPurgatory\",name=\"NumDelayedRequests\"",
       "attr": [
-        "Value"
+        { "name" : "Value", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.server.FetchRequestPurgatory.NumDelayedRequests"
     },
     {
       "obj": "\"kafka.server\":type=\"FetchRequestPurgatory\",name=\"PurgatorySize\"",
       "attr": [
-        "Value"
+        { "name" : "Value", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.server.FetchRequestPurgatory.PurgatorySize"
     },
     {
       "obj": "\"kafka.network\":type=\"RequestMetrics\",name=\"Produce-RequestsPerSec\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.network.RequestMetrics.ProduceRequests"
     },
     {
       "obj": "\"kafka.network\":type=\"RequestMetrics\",name=\"Fetch-Follower-RequestsPerSec\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.network.RequestMetrics.FetchFollowerRequests"
     },
     {
       "obj": "\"kafka.network\":type=\"RequestMetrics\",name=\"Fetch-Consumer-RequestsPerSec\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.network.RequestMetrics.FetchConsumerRequests"
     },
     {
       "obj": "\"kafka.controller\":type=\"KafkaController\",name=\"ActiveControllerCount\"",
       "attr": [
-        "Value"
+        { "name" : "Value", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.controller.KafkaController.ActiveControllerCount"
     },
     {
       "obj": "\"kafka.controller\":type=\"KafkaController\",name=\"OfflinePartitionsCount\"",
       "attr": [
-        "Value"
+        { "name" : "Value", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.controller.KafkaController.OfflinePartitionsCount"
     },
     {
       "obj": "\"kafka.controller\":type=\"ControllerStats\",name=\"LeaderElectionRateAndTimeMs\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.controller.ControllerStats.LeaderElection"
     },
     {
       "obj": "\"kafka.controller\":type=\"ControllerStats\",name=\"UncleanLeaderElectionsPerSec\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.controller.ControllerStats.UncleanLeaderElection"
     },
     {
       "obj": "\"kafka.consumer\":type=\"ConsumerFetcherManager\",name=\"*-MaxLag\"",
       "attr": [
-        "Value"
+        { "name" : "Value", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.consumer.ConsumerFetcherManager.MaxLag"
     },
     {
       "obj": "\"kafka.consumer\":type=\"ConsumerFetcherManager\",name=\"*-MinFetchRate\"",
       "attr": [
-        "Value"
+        { "name" : "Value", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.consumer.ConsumerFetcherManager.MinFetchRate"
     },
     {
       "obj": "\"kafka.producer\":type=\"ProducerRequestsMetrics\",name=\"-AllBrokersProducerRequestSize\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.producer.ProducerRequestsMetrics.AllBrokersProducerRequestSize"
     },
     {
       "obj": "\"kafka.producer\":type=\"ProducerRequestsMetrics\",name=\"-AllBrokersProducerRequestRateAndTimeMs\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.producer.ProducerRequestsMetrics.AllBrokersProducerRequestRate"
     },
     {
       "obj": "\"kafka.producer\":type=\"ProducerStats\",name=\"-FailedSendsPerSec\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.producer.ProducerStats.FailedSendsPerSec"
     },
     {
       "obj": "\"kafka.producer\":type=\"ProducerTopicMetrics\",name=\"-AllTopicsBytesPerSec\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.producer.ProducerTopicMetrics.AllTopicsBytes"
     },
     {
       "obj": "\"kafka.producer\":type=\"ProducerTopicMetrics\",name=\"-AllTopicsDroppedMessagesPerSec\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.producer.ProducerTopicMetrics.AllTopicsDroppedMessages"
     },
     {
       "obj": "\"kafka.producer\":type=\"ProducerTopicMetrics\",name=\"-AllTopicsMessagesPerSec\"",
       "attr": [
-        "Count"
+        { "name" : "Count", "type" : "GAUGE:0:U" }
       ],
       "resultAlias": "sdkafka.producer.ProducerTopicMetrics.AllTopicsMessages"
     }

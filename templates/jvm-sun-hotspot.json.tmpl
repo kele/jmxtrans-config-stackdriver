@@ -9,44 +9,44 @@
       "obj": "java.lang:type=Threading",
       "resultAlias": "jvm.localhost.Threading",
       "attr": [
-        "DaemonThreadCount",
-        "ThreadCount",
-        "PeakThreadCount"
+        { "name" : "DaemonThreadCount", "type" : "GAUGE:0:U" },
+        { "name" : "ThreadCount", "type" : "GAUGE:0:U" },
+        { "name" : "PeakThreadCount", "type" : "GAUGE:0:U" }
       ]
     },
     {
       "obj": "java.lang:type=Memory",
       "resultAlias": "jvm.localhost.Memory",
       "attr": [
-        "HeapMemoryUsage",
-        "NonHeapMemoryUsage"
+        { "name" : "HeapMemoryUsage", "type" : "GAUGE:0:U" },
+        { "name" : "NonHeapMemoryUsage", "type" : "GAUGE:0:U" }
       ]
     },
     {
       "obj": "java.lang:type=Runtime",
       "resultAlias": "jvm.localhost.Runtime",
       "attr": [
-        "Uptime"
+        { "name" : "Uptime", "type" : "GAUGE:0:U" }
       ]
     },
     {
       "obj": "java.lang:type=OperatingSystem",
       "resultAlias": "jvm.localhost.os",
       "attr": [
-        "CommittedVirtualMemorySize",
-        "FreePhysicalMemorySize",
-        "FreeSwapSpaceSize",
-        "OpenFileDescriptorCount",
-        "ProcessCpuTime",
-        "SystemLoadAverage"
+        { "name" : "CommittedVirtualMemorySize", "type" : "GAUGE:0:U" },
+        { "name" : "FreePhysicalMemorySize", "type" : "GAUGE:0:U" },
+        { "name" : "FreeSwapSpaceSize", "type" : "GAUGE:0:U" },
+        { "name" : "OpenFileDescriptorCount", "type" : "GAUGE:0:U" },
+        { "name" : "ProcessCpuTime", "type" : "GAUGE:0:U" },
+        { "name" : "SystemLoadAverage", "type" : "GAUGE:0:U" }
       ]
     },
     {
       "obj": "java.lang:type=GarbageCollector,name=*",
       "resultAlias": "jvm.localhost.gc",
       "attr": [
-        "CollectionCount",
-        "CollectionTime"
+        { "name" : "CollectionCount", "type" : "GAUGE:0:U" },
+        { "name" : "CollectionTime", "type" : "GAUGE:0:U" }
       ]
     }
   ]
