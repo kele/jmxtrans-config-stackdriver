@@ -6,12 +6,12 @@
       "numQueryThreads": 2,
       "queries": [
         {
-          "obj": "MBEAN PATH",
+          "obj": "MBEAN_PATH",
           "attr": [
-            "MBEAN ATTRIBUTE 1",
-            "MBEAN ATTRIBUTE 2",
-            "MBEAN ATTRIBUTE 3",
-            "MBEAN ATTRIBUTE 4"
+            "MBEAN_ATTRIBUTE_1",
+            "MBEAN_ATTRIBUTE_2",
+            "MBEAN_ATTRIBUTE_3",
+            "MBEAN_ATTRIBUTE_4"
           ],
           "resultAlias": "MYAPP.MYSUBYSTEM.PREFIX",
           "outputWriters": [
@@ -26,9 +26,9 @@
           ]
         },
         {
-          "obj": "MBEAN 2 PATH",
+          "obj": "MBEAN_2 PATH",
           "attr": [
-            "MBEAN ATTRIBUTE"
+            "MBEAN_ATTRIBUTE"
           ],
           "resultAlias": "MYAPP.MYSUBYSTEM.PREFIX",
           "outputWriters": [
