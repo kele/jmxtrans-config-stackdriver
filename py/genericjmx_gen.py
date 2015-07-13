@@ -48,7 +48,7 @@ def convert_query(q):
 
     return {"ObjectName" : obj,
             "MBean" : alias,
-            "Values" : q["attr"],
+            "Values" : [ a["name"] for a in q["attr"]],
             "InstancePrefix" : alias}
 
 
