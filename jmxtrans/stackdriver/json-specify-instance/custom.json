@@ -10,7 +10,8 @@
           "attr": [
             "MBEAN ATTRIBUTE 1",
             "MBEAN ATTRIBUTE 2",
-            "MBEAN ATTRIBUTE 3"
+            "MBEAN ATTRIBUTE 3",
+            "MBEAN ATTRIBUTE 4"
           ],
           "resultAlias": "MYAPP.MYSUBYSTEM.PREFIX",
           "outputWriters": [

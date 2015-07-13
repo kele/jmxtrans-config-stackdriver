@@ -9,8 +9,7 @@
           "obj": "Catalina:type=ThreadPool,name=*",
           "attr": [
             "currentThreadCount",
-            "currentThreadsBusy",
-            ""
+            "currentThreadsBusy"
           ],
           "resultAlias": "tomcat.connectors",
           "outputWriters": [
