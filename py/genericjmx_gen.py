@@ -7,7 +7,7 @@ MBEAN_TEMPLATE = """
             <Value>
                 Type "{InstancePrefix}"
                 Table false
-                {ValuesString}
+                {ValuesList}
             </Value>
 
         </MBean>
@@ -24,12 +24,12 @@ CONFIG_TEMPLATE = """
     LoadPlugin "org.collectd.java.GenericJMX"
 
     <Plugin "GenericJMX">
-{MBeans}
+{MBeanList}
 
         <Connection>
             Host "{Host}"
             ServiceURL "{ServiceURL}"
-{WhatToCollect}
+{CollectList}
         </Connection>
     </Plugin>
 </Plugin>
@@ -63,7 +63,7 @@ def encode_query(genericjmx_query):
     values_string = ''.join([encode_value(v["name"]) for v in genericjmx_query["Attributes"]])
     value_type = genericjmx_query["InstancePrefix"]
 
-    return { "conf" : MBEAN_TEMPLATE.format(ValuesString=values_string, **genericjmx_query),
+    return { "conf" : MBEAN_TEMPLATE.format(ValuesList=values_string, **genericjmx_query),
              "type" : encode_type(value_type, genericjmx_query["Attributes"]) }
 
 
@@ -78,10 +78,12 @@ def convert(server, queries, options):
     options["host"] = server["host"]
     options["port"] = server["port"]
 
-    return { "conf" : CONFIG_TEMPLATE.format(MBeans=''.join([q["conf"] for q in encoded_queries]),
-                                              WhatToCollect=what_to_collect,
+    conf = CONFIG_TEMPLATE.format(MBeanList=''.join([q["conf"] for q in encoded_queries]),
+                                              CollectList=what_to_collect,
                                               ServiceURL=service_url,
-                                              **options),
+                                              **options)
+    conf = '\n'.join([line.rstrip() for line in conf.splitlines()])
+    return { "conf" : conf,
              "types" : '\n'.join([q["type"] for q in encoded_queries]) }
 
 
