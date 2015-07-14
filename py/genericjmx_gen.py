@@ -8,6 +8,7 @@ MBEAN_TEMPLATE = """
                 Type "{InstancePrefix}"
                 Table false
                 {ValuesList}
+                {InstanceFromList}
             </Value>
 
         </MBean>
@@ -40,6 +41,9 @@ COLLECT_TEMPLATE = """
 
 SERVICEURL_TEMPLATE = "service:jmx:rmi:///jndi/rmi://{host}:{port}/jmxrmi"
 
+INSTANCEFROM_TEMPLATE = """
+                InstanceFrom "{typename}" """
+
 import json
 
 def convert_query(q):
@@ -49,7 +53,8 @@ def convert_query(q):
     return {"ObjectName" : obj,
             "MBean" : alias,
             "Attributes" : q["attr"],
-            "InstancePrefix" : alias}
+            "InstancePrefix" : alias,
+            "TypeNames" : q.get("typeNames", [])}
 
 
 def encode_value(attribute):
@@ -63,7 +68,15 @@ def encode_query(genericjmx_query):
     values_string = ''.join([encode_value(v["name"]) for v in genericjmx_query["Attributes"]])
     value_type = genericjmx_query["InstancePrefix"]
 
-    return { "conf" : MBEAN_TEMPLATE.format(ValuesList=values_string, **genericjmx_query),
+    instancefrom_list = [INSTANCEFROM_TEMPLATE.format(typename=typename) for typename in genericjmx_query["TypeNames"]]
+    instancefrom_list = '\n'.join(instancefrom_list)
+
+    conf = MBEAN_TEMPLATE.format(ValuesList=values_string,
+                                            InstanceFromList=instancefrom_list,
+                                            **genericjmx_query)
+
+    conf = '\n'.join([line.rstrip() for line in conf.splitlines()])
+    return { "conf" : conf,
              "type" : encode_type(value_type, genericjmx_query["Attributes"]) }
 
 
@@ -79,9 +92,9 @@ def convert(server, queries, options):
     options["port"] = server["port"]
 
     conf = CONFIG_TEMPLATE.format(MBeanList=''.join([q["conf"] for q in encoded_queries]),
-                                              CollectList=what_to_collect,
-                                              ServiceURL=service_url,
-                                              **options)
+                                  CollectList=what_to_collect,
+                                  ServiceURL=service_url,
+                                  **options)
     conf = '\n'.join([line.rstrip() for line in conf.splitlines()])
     return { "conf" : conf,
              "types" : '\n'.join([q["type"] for q in encoded_queries]) }
